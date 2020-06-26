@@ -1,0 +1,9 @@
+node{
+   stage('BUILD'){
+   git clone "https://github.com/vishnu2198/vishnutest.git"
+    def mvn = 'maven'
+    withEnv( ["PATH+MAVEN=${tool mvn}/bin"] ) {
+     sh "mvn clean install"
+    }
+   }
+ }
